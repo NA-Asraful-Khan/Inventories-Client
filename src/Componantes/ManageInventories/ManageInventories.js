@@ -3,7 +3,7 @@ import useInventory from '../../Hooks/DataHook';
 import InventoryItem from '../InventoryItem/InventoryItem';
 
 const ManageInventories = () => {
-    const [items, setItem] = useInventory();
+    const [items] = useInventory();
     return (
         <div className=' mt-5'>
             <h2 className='text-center py-5'>Inventories</h2>

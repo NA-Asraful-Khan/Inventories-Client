@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useInventory from '../../../Hooks/DataHook';
 import InventoryItem from '../../InventoryItem/InventoryItem';
