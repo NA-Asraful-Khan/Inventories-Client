@@ -1,9 +1,8 @@
-
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 
-const InventoryItem = ({ item }) => {
+const ManageItems = ({ item }) => {
     const { _id, quantity, carName, company, price, description, picture } = item;
     const navigate = useNavigate();
     const navigatetoDetail=id=>{
@@ -22,12 +21,13 @@ const InventoryItem = ({ item }) => {
                         {description}
                     </Card.Text>
                 </Card.Body>
-                <Card.Footer className="text-muted">
-                    <button onClick={()=> navigatetoDetail(_id)} className='btn btn-primary d-block w-100'>Show Details</button>
+                <Card.Footer className="text-muted d-flex justify-content-center ">
+                    <button onClick={()=> navigatetoDetail(_id)} className='btn btn-primary m-2 d-block'>Show Details</button>
+                    <button onClick={()=> navigatetoDetail(_id)} className='btn btn-primary d-block m-2'>Delete Item</button>
                 </Card.Footer>
             </Card>
         </div>
     );
 };
 
-export default InventoryItem;
+export default ManageItems;

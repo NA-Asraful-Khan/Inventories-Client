@@ -5,6 +5,7 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { toast} from 'react-toastify';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { sendPasswordResetEmail } from 'firebase/auth';
 
 
 const Signup = () => {
@@ -15,7 +16,7 @@ const Signup = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth ,{ sendEmailVerification: true });
 
     const handleSignup = event => {
         event.preventDefault();
@@ -28,9 +29,10 @@ const Signup = () => {
         }
 
         createUserWithEmailAndPassword(email, password);
-        navigate('/');
-        toast("Signup Done");    
+        navigate('/');   
     }
+
+
     return (
         <div className='w-50 mx-auto mt-5 py-5 d-block'>
             <Form onSubmit={handleSignup}>

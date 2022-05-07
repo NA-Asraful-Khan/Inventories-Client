@@ -1,6 +1,7 @@
 import React from 'react';
 import useInventory from '../../Hooks/DataHook';
 import InventoryItem from '../InventoryItem/InventoryItem';
+import ManageItems from './ManageItems';
 
 const ManageInventories = () => {
     const [items] = useInventory();
@@ -9,10 +10,10 @@ const ManageInventories = () => {
             <h2 className='text-center py-5'>Inventories</h2>
             <div className='row gx-0'>
                     {
-                        items.map(item => <InventoryItem
+                        items.map(item => <ManageItems
                             key={item._id}
                             item={item}
-                        ></InventoryItem>)
+                        ></ManageItems>)
                     }
             </div>
         </div>

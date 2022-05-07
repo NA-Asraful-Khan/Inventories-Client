@@ -23,10 +23,10 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/Home' element={<Home></Home>}></Route>
-        <Route path='/inventory' element={<ManageInventories></ManageInventories>}></Route>
+        <Route path='/inventory' element={<RequireAuth><ManageInventories></ManageInventories></RequireAuth>}></Route>
         <Route path='/inventory/:inventoryId' element={
           <RequireAuth>
-            <InventoryDetail></InventoryDetail>
+            <Inventory></Inventory>
           </RequireAuth>
         }></Route>
         <Route path='/additem' element={
