@@ -1,6 +1,7 @@
 import { Button } from 'bootstrap';
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const InventoryItem = ({ item }) => {
     const { _id, quantity, carName, company, price, description, picture } = item;
@@ -9,14 +10,16 @@ const InventoryItem = ({ item }) => {
             <Card className='p-2 shadow-lg' style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={picture} />
                 <Card.Body>
-                    <Card.Title>{carName}</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">{company}</Card.Subtitle>
+                    <Card.Title>Model: {carName}</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">Brand: {company}</Card.Subtitle>
+                    <Card.Subtitle className="mb-2">Price: ${price}</Card.Subtitle>
+                    <Card.Subtitle className="mb-2">Quantity: {quantity}Pcs</Card.Subtitle>
                     <Card.Text>
                         {description}
                     </Card.Text>
                 </Card.Body>
                 <Card.Footer className="text-muted">
-                    <button className='btn btn-primary'>Manage Inventory</button>
+                    <Link to="/inventory" className='btn btn-primary d-block w-100'>Manage Inventory</Link>
                 </Card.Footer>
             </Card>
         </div>

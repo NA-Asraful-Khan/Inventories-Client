@@ -1,25 +1,15 @@
-import { useEffect, useState } from "react"
-import { getStoredCart } from "../utilities/fakedb";
+import { useEffect, useState } from "react";
 
-const useCart =(products)=>{
+const useInventory = () => {
 
-    const [cart, setCart]= useState([]);
+    const [items, setItem] = useState([]);
+    useEffect(() => {
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => setItem(data));
+    }, []);
 
-    useEffect(()=>{
-        const storedCart = getStoredCart();
-        const savedCart = [];
-        for(const id in storedCart){
-            const addedProduct = products.find(product => product.id === id);
-            if(addedProduct){
-                const quantity = storedCart[id];
-                addedProduct.quantity = quantity;
-                savedCart.push(addedProduct);
-            } 
-        }
-        setCart(savedCart);
-    },[products]);
-
-    return [cart, setCart];
+    return [items, setItem];
 }
 
-export default useCart;
+export default useInventory;
