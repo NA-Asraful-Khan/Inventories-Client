@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 const InventoryItem = ({ item }) => {
     const { _id, quantity, carName, company, price, description, picture } = item;
     return (
-        <div className='col-12 col-md-6 col-lg-4 d-flex justify-content-center my-2'>
-            <Card className='p-2 shadow-lg' style={{ width: '18rem' }}>
+        <div className='container col-12 col-md-6 col-lg-4 d-flex justify-content-center my-2'>
+            <Card className='py-2 shadow-lg card-width'>
                 <Card.Img variant="top" src={picture} />
                 <Card.Body>
                     <Card.Title>Model: {carName}</Card.Title>
@@ -19,7 +19,7 @@ const InventoryItem = ({ item }) => {
                     </Card.Text>
                 </Card.Body>
                 <Card.Footer className="text-muted">
-                    <Link to="/inventory" className='btn btn-primary d-block w-100'>Manage Inventory</Link>
+                    <Link to={`/inventory/${_id}`} className='btn btn-primary d-block w-100'>Manage Inventory</Link>
                 </Card.Footer>
             </Card>
         </div>

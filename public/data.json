@@ -3,63 +3,63 @@
       "_id": "6276307607d629932590af46",
       "picture": "https://i.ibb.co/ZVZvwKD/4runner-SR5-Premium.png",
       "quantity": 32,
-      "carName": "4runner-SR5-Premium",
+      "carName": "4runner-SR5 Premium",
       "company": "Toyota",
-      "price": 920,
+      "price": "41,515",
       "description": "Blind Spot Monitor - SofTex®-trimmed  - Heated side mirrors with turn signal indicator\r\n"
     },
     {
       "_id": "62763076684828e023f99275",
       "picture": "https://i.ibb.co/mHCtryM/4-Runner-TRD-sport.png",
       "quantity": 34,
-      "carName": "4Runner-TRD sport",
+      "carName": "4Runner-TRD Sport",
       "company": "Toyota",
-      "price": 730,
+      "price": "40,950",
       "description": "20-in. split 6-spoke alloy wheels - SofTex®-trimmed - seats with TRD stitching  - X-REAS Sport Enhancement Suspension\r\n"
     },
     {
       "_id": "62763076e2458f1492877202",
       "picture": "https://i.ibb.co/VLgQZxz/4-Runner-TRD-pro.png",
       "quantity": 36,
-      "carName": "4-Runner-TRD-pro",
+      "carName": "4-Runner-TRD Pro",
       "company": "Toyota",
-      "price": 760,
-      "description": "Officia excepteur consequat adipisicing fugiat nisi laboris nisi. Ipsum duis id aliqua commodo qui. Nostrud elit voluptate aute velit dolor nulla ea ea ea proident.\r\n"
+      "price": "52,920",
+      "description": "17-in. matte-black flow-form TRD alloy wheels - TRD Pro-stamped aluminum front skid plate  - TRD FOX®  high-performance shocks and TRD-tuned front springs\r\n"
     },
     {
       "_id": "6276307615404efb93173755",
       "picture": "https://i.ibb.co/FxbjTjc/Avalon-Hybrid-xsehybridnightshade.png",
       "quantity": 23,
-      "carName": "Avalon Hybrid-xsehybridnightshade",
+      "carName": "Avalon - XSE Hybrid Nightshade",
       "company": "Toyota",
-      "price": 680,
-      "description": "Ut sunt dolor cupidatat qui ex non minim ex Lorem anim velit veniam. Fugiat excepteur fugiat excepteur enim consequat commodo consequat id officia veniam eiusmod. Cillum nulla eu occaecat ad aute consequat adipisicing nisi nisi eiusmod quis. Elit irure cupidatat nisi ullamco labore. Sunt ex Lorem aliquip anim. Reprehenderit anim consectetur ad eu nisi sint ut magna. Velit nulla aute laborum reprehenderit reprehenderit nisi mollit eu eu labore aliqua nisi.\r\n"
+      "price": "41,200",
+      "description": "Paddle shifters and aluminum pedal covers - Gloss-black accents and rear spoiler - 19-in. black-painted alloy wheels .\r\n"
     },
     {
       "_id": "62763076c85881469243c98c",
       "picture": "https://i.ibb.co/r6986VV/Avalon-Touring.png",
       "quantity": 30,
-      "carName": "Avalon-Touring",
+      "carName": "Avalon -Touring",
       "company": "Toyota",
-      "price": 900,
-      "description": "Enim minim ipsum laboris ea sit do quis excepteur occaecat tempor sint incididunt labore ut. Ea aute deserunt consequat amet ipsum nisi commodo ut ut. Ex Lorem dolore in ullamco et id veniam. Dolor ad magna incididunt veniam minim reprehenderit adipisicing tempor minim velit ut. Ut cupidatat laborum laboris aute tempor consectetur sit anim tempor enim. Ipsum irure ea aliqua occaecat duis id. Id aute occaecat ea ea culpa aliqua officia.\r\n"
+      "price": "43,525",
+      "description": "Adaptive Variable Suspension (AVS) system - Premium Audio with JBL®  and Dynamic Navigation —includes 14 speakers - LED headlights with smoked chrome bezels and on/off feature;\r\n"
     },
     {
       "_id": "627630766cea70e648fc4cdf",
       "picture": "https://i.ibb.co/7QTz3qJ/Camry-shey-brid-night-shade.png",
       "quantity": 37,
-      "carName": "Camry-shey-brid-night-shade",
+      "carName": "Camry-SE Hybrid Nightshade",
       "company": "Toyota",
-      "price": 390,
-      "description": "Dolor mollit voluptate nisi culpa excepteur tempor occaecat ea minim. Cupidatat eu qui dolor ex dolore nulla sit veniam consectetur minim voluptate tempor cillum labore. Commodo labore Lorem dolore nulla consequat incididunt velit adipisicing. Adipisicing consequat occaecat proident excepteur minim. Eu cillum aute duis laborum. Consectetur et excepteur cillum culpa veniam ad veniam mollit. Ipsum sit cupidatat qui ipsum sunt adipisicing.\r\n"
+      "price": "30,215",
+      "description": "18-in. black alloy wheels - Black front grille with sport mesh insert - Black mirror caps, door handles, window trim and badging\r\n"
     },
     {
       "_id": "62763076b45b43ab748acd0a",
       "picture": "https://i.ibb.co/44K9XJ7/Gr86-premium.png",
       "quantity": 32,
-      "carName": "Gr86-premium",
+      "carName": "Gr86-Premium",
       "company": "Toyota",
-      "price": 480,
-      "description": "Veniam consectetur exercitation adipisicing sit amet. Non proident est consectetur consectetur voluptate eiusmod ea anim occaecat id et excepteur nostrud. Ullamco ex laborum velit nisi laborum incididunt sit reprehenderit.\r\n"
+      "price": "30,300",
+      "description": "18-in. matte-black-painted alloy wheels with Michelin® Pilot® Sport 4 tires - Color-keyed duckbill rear spoiler - Complimentary 1-year NASA membership, including one free High-Performance Driving Experience (HPDE) \r\n"
     }
   ]

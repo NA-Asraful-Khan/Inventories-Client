@@ -5,7 +5,7 @@ const Home = () => {
     return (
         <div>
             <img
-                className="d-block w-100"
+                className="d-block w-100 mt-5"
                 src="https://i.ibb.co/56Dtj7N/car-banner-1.jpg"
                 alt="First slide"
             />

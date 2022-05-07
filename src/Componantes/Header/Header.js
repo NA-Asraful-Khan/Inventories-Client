@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <div className='mb-5'>
+            <Navbar className='fixed-top' collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/"><i>AutoMobile Inventories</i></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse className='d-flex justify-content-end' id="responsive-navbar-nav">
-                        <Nav>
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className='ms-auto'>
                             <Nav.Link as={Link} to="/">Home</Nav.Link>
                             <Nav.Link as={Link} to="/inventory">Manage Inventories</Nav.Link>
                             <Nav.Link as={Link} to="/additem">Add Item</Nav.Link>
