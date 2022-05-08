@@ -57,7 +57,7 @@ const AddItem = () => {
                     <Form.Control name="email" disabled value={user.email} type="email" placeholder="Enter Your Email" />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicCarName">
+                <Form.Group className="mb-3 d-none" controlId="formBasicCarName">
                     <Form.Control name="name" disabled value={user.displayName} type="email" placeholder="Enter Your Email" />
                 </Form.Group>
 
