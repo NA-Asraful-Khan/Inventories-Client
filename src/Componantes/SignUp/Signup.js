@@ -19,9 +19,6 @@ const Signup = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth ,{ sendEmailVerification: true });
 
-    if(user){
-        console.log(user);
-    }
 
     const handleSignup = async (event) => {
         event.preventDefault();
@@ -35,7 +32,7 @@ const Signup = () => {
         
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({displayName})
-        alert('updated profile')
+        toast('updated profile')
         navigate('/');   
     }
 
