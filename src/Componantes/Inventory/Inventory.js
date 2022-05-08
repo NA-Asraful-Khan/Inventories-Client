@@ -13,23 +13,43 @@ const Inventory = () => {
         .then(res=> res.json())
         .then(data=> setItem(data));
     },[])
-
-    const handleDeliver=(event)=>{
-        const quantity = event.target.quantity.value;
-        alert(item.quantity)
+//item.picture item.carName item.company item.price item.quantity item.description
+    const handleDeliver=()=>{
+        const minusQuantity = item.quantity-1;
+        const newdata ={
+            picture: item.picture,
+            carName: item.carName,
+            company: item.company,
+            price: item.price,
+            quantity: minusQuantity,
+            description: item.description
+        }
+        
+        const url = `http://localhost:5000/product/${inventoryId}`;
+        fetch(url,{
+            method: 'PUT',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newdata)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            setItem(newdata);
+        }) 
     }
 
 
     const handleUpdate=(event)=>{
         event.preventDefault();
         const carName = event.target.carName.value;
-        const companyName = event.target.companyName.value;
+        const company = event.target.company.value;
         const price = event.target.price.value;
         const quantity = event.target.quantity.value;
         const description = event.target.description.value;
         const picture = event.target.imgUrl.value;
 
-        const product = {carName ,companyName, price,quantity,description, picture};
+        const product = {carName ,company, price,quantity,description, picture};
         const url = `http://localhost:5000/product/${inventoryId}`;
         fetch(url,{
             method: 'PUT',
@@ -52,7 +72,7 @@ const Inventory = () => {
                 <Card.Img variant="top" src={item.picture} />
                 <Card.Body>
                     <Card.Title>Model: {item.carName}</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">Brand: {item.companyName}</Card.Subtitle>
+                    <Card.Subtitle className="mb-2 text-muted">Brand: {item.company}</Card.Subtitle>
                     <Card.Subtitle className="mb-2">Price: ${item.price}</Card.Subtitle>
                     <Card.Subtitle className="mb-2">Quantity: {item.quantity}Pcs</Card.Subtitle>
                     <Card.Text>
@@ -63,13 +83,15 @@ const Inventory = () => {
                     <button onClick={()=>handleDeliver()} className='btn btn-warning d-block m-2'>Deliver</button>
                 </Card.Footer>
             </Card>
+
+            <h2 className='text-center'>Restock Items</h2>
             <Form className='w-50 mx-auto' onSubmit={handleUpdate}>
                 <Form.Group className="mb-3" controlId="formBasicCarName">
                     <Form.Control disabled value={item.carName} name="carName" type="text" placeholder="Enter Car Model Name" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicCompany">
-                    <Form.Control disabled value={item.companyName} name="companyName" type="text" placeholder="Enter Company Name" />
+                    <Form.Control disabled value={item.company} name="company" type="text" placeholder="Enter Company Name" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPrice">
@@ -80,7 +102,7 @@ const Inventory = () => {
                     <Form.Control name="quantity" type="number" placeholder="Enter Quantity" />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicDescription">
+                <Form.Group className="mb-3 d-none" controlId="formBasicDescription">
                     <Form.Control disabled value={item.description} name="description" as="textarea" type="text" placeholder="Enter Short Description" />
                 </Form.Group>
 

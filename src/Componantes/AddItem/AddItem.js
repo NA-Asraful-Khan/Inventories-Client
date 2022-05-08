@@ -30,6 +30,7 @@ const AddItem = () => {
     }
     return (
         <div className='w-50 mx-auto mt-5 py-5 d-block'>
+            <h2 className='text-center'>Add New Item</h2>
             <Form onSubmit={handleItemSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicCarName">
                     <Form.Control name="carName" type="text" placeholder="Enter Car Model Name" />
