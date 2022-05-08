@@ -5,7 +5,7 @@ import InventoryItem from '../InventoryItem/InventoryItem';
 import ManageItems from './ManageItems';
 
 const ManageInventories = () => {
-    const [items] = useInventory();
+    const [items, setItem] = useInventory();
     const handleDelet=(id)=>{
         const proceed = window.confirm("Are you sure you want to delet?");
         if(proceed){
@@ -18,6 +18,9 @@ const ManageInventories = () => {
             .then(data =>{
                 if(data.deletedCount>0){
                     console.log(data);
+                    const remaining = items.filter(item => item._id !== id);
+                    setItem(remaining);
+
                 }
             })
         }
