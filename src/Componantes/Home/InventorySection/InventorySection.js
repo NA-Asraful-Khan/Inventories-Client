@@ -18,7 +18,7 @@ const InventorySection = () => {
                 }
             </div>
             <div className='text-center my-2'>
-                <Link to="/inventory" className='btn btn-danger text-center mx-auto '>Manage Inventory</Link>
+                <Link to="/inventory" className='btn btn-danger text-center mx-auto '>Show All Products</Link>
             </div>
         </div>
     );
