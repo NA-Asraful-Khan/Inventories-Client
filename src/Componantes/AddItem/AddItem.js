@@ -26,11 +26,7 @@ const AddItem = () => {
         .then(data =>{
             toast('Item Added');
             event.target.reset();
-        })
-
-        
-        
-        
+        }) 
     }
     return (
         <div className='w-50 mx-auto mt-5 py-5 d-block'>

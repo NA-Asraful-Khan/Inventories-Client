@@ -1,14 +1,96 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import useInventory from '../../Hooks/DataHook';
 import { Link, useParams } from 'react-router-dom';
+import { Card, Form } from 'react-bootstrap';
+import { toast } from 'react-toastify';
 
 const Inventory = () => {
     const {inventoryId} = useParams();
-    const [items, setItem] = useInventory();
-    console.log(items)
+    const [item, setItem] = useState({});
+    useEffect(()=>{
+        const url = `http://localhost:5000/product/${inventoryId}`;
+        fetch(url)
+        .then(res=> res.json())
+        .then(data=> setItem(data));
+    },[])
+
+    const handleDeliver=(event)=>{
+        const quantity = event.target.quantity.value;
+        alert(item.quantity)
+    }
+
+
+    const handleUpdate=(event)=>{
+        event.preventDefault();
+        const carName = event.target.carName.value;
+        const companyName = event.target.companyName.value;
+        const price = event.target.price.value;
+        const quantity = event.target.quantity.value;
+        const description = event.target.description.value;
+        const picture = event.target.imgUrl.value;
+
+        const product = {carName ,companyName, price,quantity,description, picture};
+        const url = `http://localhost:5000/product/${inventoryId}`;
+        fetch(url,{
+            method: 'PUT',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(product)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            toast('Item Updated');
+            setItem(product);
+            event.target.reset();
+        }) 
+    }
+     
     return (
-        <div className='mt-5'>
-            <h2>This is inventory{inventoryId}--{items.length}</h2>
+        <div className='mt-5 py-5'>
+            <Card className='container col-12 col-md-6 col-lg-4 d-flex justify-content-center my-2 py-2 shadow-lg card-width'>
+                <Card.Img variant="top" src={item.picture} />
+                <Card.Body>
+                    <Card.Title>Model: {item.carName}</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">Brand: {item.companyName}</Card.Subtitle>
+                    <Card.Subtitle className="mb-2">Price: ${item.price}</Card.Subtitle>
+                    <Card.Subtitle className="mb-2">Quantity: {item.quantity}Pcs</Card.Subtitle>
+                    <Card.Text>
+                        {item.description}
+                    </Card.Text>
+                </Card.Body>
+                <Card.Footer className="text-muted d-flex justify-content-center ">
+                    <button onClick={()=>handleDeliver()} className='btn btn-warning d-block m-2'>Deliver</button>
+                </Card.Footer>
+            </Card>
+            <Form className='w-50 mx-auto' onSubmit={handleUpdate}>
+                <Form.Group className="mb-3" controlId="formBasicCarName">
+                    <Form.Control disabled value={item.carName} name="carName" type="text" placeholder="Enter Car Model Name" />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicCompany">
+                    <Form.Control disabled value={item.companyName} name="companyName" type="text" placeholder="Enter Company Name" />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPrice">
+                    <Form.Control disabled value={item.price} name="price" type="text" placeholder="Enter Price Amount" />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicQuantity">
+                    <Form.Control name="quantity" type="number" placeholder="Enter Quantity" />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicDescription">
+                    <Form.Control disabled value={item.description} name="description" as="textarea" type="text" placeholder="Enter Short Description" />
+                </Form.Group>
+
+                <Form.Group className="mb-3 d-none" controlId="formBasicPicture">
+                    <Form.Control disabled value={item.picture} name="imgUrl" type="text" placeholder="Enter Image Url" />
+                </Form.Group>
+                <button className='btn btn-primary' variant="primary" type="submit">
+                    Submit
+                </button>
+            </Form>
             <div className='text-center my-2'>
                 <Link to="/inventory" className='btn btn-danger text-center mx-auto '>Manage Inventory</Link>
             </div>
