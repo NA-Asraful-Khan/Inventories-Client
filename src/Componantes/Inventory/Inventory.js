@@ -7,7 +7,7 @@ const Inventory = () => {
     const {inventoryId} = useParams();
     const [item, setItem] = useState({});
     useEffect(()=>{
-        const url = `http://localhost:5000/product/${inventoryId}`;
+        const url = `https://enigmatic-headland-48112.herokuapp.com/product/${inventoryId}`;
         fetch(url)
         .then(res=> res.json())
         .then(data=> setItem(data));
@@ -24,7 +24,7 @@ const Inventory = () => {
             description: item.description
         }
         
-        const url = `http://localhost:5000/product/${inventoryId}`;
+        const url = `https://enigmatic-headland-48112.herokuapp.com/product/${inventoryId}`;
         fetch(url,{
             method: 'PUT',
             headers:{
@@ -49,7 +49,7 @@ const Inventory = () => {
         const picture = event.target.imgUrl.value;
 
         const product = {carName ,company, price,quantity,description, picture};
-        const url = `http://localhost:5000/product/${inventoryId}`;
+        const url = `https://enigmatic-headland-48112.herokuapp.com/product/${inventoryId}`;
         fetch(url,{
             method: 'PUT',
             headers:{

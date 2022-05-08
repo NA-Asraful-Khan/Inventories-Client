@@ -5,7 +5,7 @@ const useInventory = () => {
     const [items, setItem] = useState([]);
     
     useEffect(() => {
-        fetch(`http://localhost:5000/product`)
+        fetch(`https://enigmatic-headland-48112.herokuapp.com/product`)
             .then(response => response.json())
             .then(data => setItem(data));
     }, []);

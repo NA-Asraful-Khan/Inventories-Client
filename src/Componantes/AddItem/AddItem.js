@@ -17,11 +17,12 @@ const AddItem = () => {
         const description = event.target.description.value;
         const picture = event.target.imgUrl.value;
         const email = user.email;
+        const name = user.displayName;
 
-        const product = {carName ,company, price,quantity,description,picture};
-        const userProduct = {carName ,company, price,quantity,description,picture, email};
+        const product = {carName ,company, price,quantity,description,picture, email,name};
+        const userProduct = {carName ,company, price,quantity,description,picture, email,name};
 
-        fetch('http://localhost:5000/myProducts/',{
+        fetch('https://enigmatic-headland-48112.herokuapp.com/myProducts/',{
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'
@@ -33,7 +34,7 @@ const AddItem = () => {
             toast('Item Added');
             event.target.reset();
         }) 
-        fetch('http://localhost:5000/product',{
+        fetch('https://enigmatic-headland-48112.herokuapp.com/product',{
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'
@@ -54,6 +55,10 @@ const AddItem = () => {
                 </Form.Group>
                 <Form.Group className="mb-3 d-none" controlId="formBasicCarName">
                     <Form.Control name="email" disabled value={user.email} type="email" placeholder="Enter Your Email" />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicCarName">
+                    <Form.Control name="name" disabled value={user.displayName} type="email" placeholder="Enter Your Email" />
                 </Form.Group>
 
 

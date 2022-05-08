@@ -9,7 +9,7 @@ const useMyItem = () => {
     
     useEffect(() => {
         const email = user.email;
-        fetch(`http://localhost:5000/myProducts?email=${email}`)
+        fetch(`https://enigmatic-headland-48112.herokuapp.com/myProducts?email=${email}`)
             .then(response => response.json())
             .then(data => setMyItem(data));
     }, [user]);
