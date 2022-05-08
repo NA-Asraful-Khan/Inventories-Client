@@ -6,7 +6,7 @@ import ManageItems from './ManageItems';
 const ManageInventories = () => {
     const [items, setItem] = useInventory();
     const handleDelet=(id)=>{
-        const proceed = window.confirm("Are you sure you want to delet?");
+        const proceed = window.confirm("Are you sure you want to delete?");
         if(proceed){
             const url = `http://localhost:5000/product/${id}`;
             fetch(url,{

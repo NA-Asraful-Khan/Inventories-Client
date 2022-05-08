@@ -1,3 +1,7 @@
 .card-width{
     width: 90%;
 }
+
+.height{
+    min-height: 530px;
+}

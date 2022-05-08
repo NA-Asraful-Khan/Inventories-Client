@@ -7,7 +7,7 @@ const MyItems = () => {
     const [items, setItem] = useInventory();
     const [myItem, setMyItem] = useMyItem();
     const handleDelet = (id , name) => {
-        const proceed = window.confirm("Are you sure you want to delet?");
+        const proceed = window.confirm("Are you sure you want to delete?");
         if (proceed) {
             const url = `http://localhost:5000/myProducts/${id}`;
             const urll = `http://localhost:5000/product/${id}`;
@@ -40,7 +40,7 @@ const MyItems = () => {
 
     }
     return (
-        <div className=' mt-5'>
+        <div className='height mt-5'>
             <h2 className='text-center py-5'>My Item</h2>
             <div className='row gx-0'>
 
