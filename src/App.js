@@ -10,7 +10,6 @@ import MyItems from './Componantes/MyItems/MyItems';
 import Login from './Componantes/Login/Login';
 import Inventory from './Componantes/Inventory/Inventory';
 import Footer from './Componantes/Footer/Footer';
-import InventoryDetail from './Componantes/Inventory/InventoryDetail';
 import { ToastContainer } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useInventory from '../../Hooks/DataHook';
-import InventoryItem from '../InventoryItem/InventoryItem';
 import ManageItems from './ManageItems';
 
 const ManageInventories = () => {
@@ -9,7 +8,6 @@ const ManageInventories = () => {
     const handleDelet=(id)=>{
         const proceed = window.confirm("Are you sure you want to delet?");
         if(proceed){
-            console.log("deleting with id:", id);
             const url = `http://localhost:5000/product/${id}`;
             fetch(url,{
                 method: "DELETE"
@@ -17,7 +15,6 @@ const ManageInventories = () => {
             .then(res => res.json())
             .then(data =>{
                 if(data.deletedCount>0){
-                    console.log(data);
                     const remaining = items.filter(item => item._id !== id);
                     setItem(remaining);
 

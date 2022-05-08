@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import useInventory from '../../Hooks/DataHook';
 import { Link, useParams } from 'react-router-dom';
 import { Card, Form } from 'react-bootstrap';
 import { toast } from 'react-toastify';
