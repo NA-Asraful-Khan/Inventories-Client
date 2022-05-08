@@ -1,7 +1,10 @@
 import React from 'react';
+import AboutCompany from '../AboutCompany/AboutCompany';
+import Gallary from '../Gallary/Gallary';
 import InventorySection from './InventorySection/InventorySection';
 
 const Home = () => {
+    
     return (
         <div>
             <img
@@ -11,6 +14,11 @@ const Home = () => {
             />
             <div className='container'>
                 <InventorySection></InventorySection>
+            </div>
+            <Gallary></Gallary>
+
+            <div className="container">
+                <AboutCompany></AboutCompany>
             </div>
         </div>
     );

@@ -68,7 +68,7 @@ const Inventory = () => {
      
     return (
         <div className='mt-5 py-5'>
-            <Card className='container col-12 col-md-6 col-lg-4 d-flex justify-content-center my-2 py-2 shadow-lg card-width'>
+            <Card className='container w-50 mx-auto col-12 col-md-6 col-lg-4 d-flex justify-content-center my-2 py-2 shadow-lg card-width'>
                 <Card.Img variant="top" src={item.picture} />
                 <Card.Body>
                     <Card.Title>Model: {item.carName}</Card.Title>
